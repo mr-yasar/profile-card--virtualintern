@@ -1,0 +1,14 @@
+{
+  "name": "profile-card-generator",
+  "version": "1.0.0",
+  "description": "Form-based profile card generator with Node.js backend and premium CSS frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

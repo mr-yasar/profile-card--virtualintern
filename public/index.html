@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generate a premium, beautifully animated professional profile card. Choose a design theme and export your card instantly.">
+  <title>Creative Profile Card Generator</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Glow Effects -->
+  <div class="glow-bg-1" id="glowBg1"></div>
+  <div class="glow-bg-2" id="glowBg2"></div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <i class="fa-solid fa-id-card-clip logo-icon"></i>
+        <h1>CardCraft <span>Pro</span></h1>
+      </div>
+      <p class="subtitle">Design & process premium profile cards dynamically</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Section: Input Form -->
+      <section class="form-section">
+        <div class="card-glass form-container">
+          <div class="section-title">
+            <i class="fa-solid fa-sliders title-icon"></i>
+            <h2>Card Configuration</h2>
+          </div>
+          
+          <form id="profileForm" novalidate>
+            <!-- Name & Role -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inputName">Full Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input type="text" id="inputName" name="name" placeholder="John Doe" required autocomplete="name">
+                </div>
+                <span class="error-msg" id="nameError">Name is required</span>
+              </div>
+
+              <div class="form-group">
+                <label for="inputRole">Professional Title</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-briefcase input-icon"></i>
+                  <input type="text" id="inputRole" name="role" placeholder="Creative Designer" autocomplete="organization-title">
+                </div>
+              </div>
+            </div>
+
+            <!-- Location & Image URL -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inputLocation">Location</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-location-dot input-icon"></i>
+                  <input type="text" id="inputLocation" name="location" placeholder="San Francisco, CA" autocomplete="country-name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputImageUrl">Avatar / Image URL</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-image input-icon"></i>
+                  <input type="url" id="inputImageUrl" name="imageUrl" placeholder="https://images.unsplash.com/photo-..." autocomplete="photo">
+                </div>
+                <span class="input-tip">Leave empty for auto-generated initial avatar</span>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="form-group">
+              <label for="inputBio">Bio / Profile Description</label>
+              <div class="textarea-wrapper">
+                <i class="fa-regular fa-clipboard input-icon"></i>
+                <textarea id="inputBio" name="bio" rows="3" placeholder="Tell the world about what you do, your achievements, or your passion..." maxlength="250"></textarea>
+              </div>
+              <div class="char-count"><span id="charNum">0</span>/250 characters</div>
+            </div>
+
+            <!-- Skills (Comma Separated) -->
+            <div class="form-group">
+              <label for="inputSkills">Key Skills <span class="input-tip">(comma-separated)</span></label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-code input-icon"></i>
+                <input type="text" id="inputSkills" name="skills" placeholder="UI/UX, JavaScript, Node.js, WebGL">
+              </div>
+            </div>
+
+            <!-- Theme Selector -->
+            <div class="form-group">
+              <label>Design Style Theme</label>
+              <div class="theme-grid">
+                <label class="theme-option" for="themeGlass">
+                  <input type="radio" id="themeGlass" name="theme" value="glass" checked>
+                  <span class="theme-card theme-glass-preview">
+                    <span class="theme-indicator"></span>
+                    <span class="theme-label">Glassmorphism</span>
+                  </span>
+                </label>
+
+                <label class="theme-option" for="themeCyber">
+                  <input type="radio" id="themeCyber" name="theme" value="cyberpunk">
+                  <span class="theme-card theme-cyber-preview">
+                    <span class="theme-indicator"></span>
+                    <span class="theme-label">Neon Cyber</span>
+                  </span>
+                </label>
+
+                <label class="theme-option" for="themeSunset">
+                  <input type="radio" id="themeSunset" name="theme" value="sunset">
+                  <span class="theme-card theme-sunset-preview">
+                    <span class="theme-indicator"></span>
+                    <span class="theme-label">Sunset Minimalist</span>
+                  </span>
+                </label>
+
+                <label class="theme-option" for="themeEmerald">
+                  <input type="radio" id="themeEmerald" name="theme" value="emerald">
+                  <span class="theme-card theme-emerald-preview">
+                    <span class="theme-indicator"></span>
+                    <span class="theme-label">Forest Emerald</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="socials-section-title">Social Connect Profiles</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inputGithub">GitHub Username / URL</label>
+                <div class="input-wrapper">
+                  <i class="fa-brands fa-github input-icon"></i>
+                  <input type="text" id="inputGithub" name="github" placeholder="octocat">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputLinkedin">LinkedIn Username / URL</label>
+                <div class="input-wrapper">
+                  <i class="fa-brands fa-linkedin-in input-icon"></i>
+                  <input type="text" id="inputLinkedin" name="linkedin" placeholder="johndoe">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputTwitter">X / Twitter Username / URL</label>
+              <div class="input-wrapper">
+                <i class="fa-brands fa-x-twitter input-icon"></i>
+                <input type="text" id="inputTwitter" name="twitter" placeholder="johndoe">
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="btn-text">Generate Profile Card</span>
+              <i class="fa-solid fa-wand-magic-sparkles btn-icon"></i>
+              <div class="btn-loader" id="btnLoader"></div>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Section: Card Preview & Output -->
+      <section class="preview-section">
+        <div class="preview-header">
+          <i class="fa-regular fa-eye title-icon"></i>
+          <h2>Live Preview</h2>
+        </div>
+
+        <!-- Initial Placeholder State -->
+        <div class="preview-wrapper" id="previewWrapper">
+          <div class="card-placeholder" id="cardPlaceholder">
+            <div class="placeholder-icon-container animate-pulse">
+              <i class="fa-solid fa-id-card placeholder-icon"></i>
+            </div>
+            <h3>Your card will appear here</h3>
+            <p>Fill out the configuration form on the left and click "Generate Profile Card" to process your data and see it styled in real-time.</p>
+          </div>
+          
+          <!-- Card Output Container (hidden by default) -->
+          <div class="profile-card" id="generatedCard">
+            <!-- Card Body will be injected dynamically -->
+          </div>
+        </div>
+
+        <!-- Card Actions (Download, Copy Link, etc.) -->
+        <div class="card-actions" id="cardActions" style="display: none;">
+          <button class="action-btn secondary-btn" id="copyDetailsBtn">
+            <i class="fa-solid fa-copy"></i> Copy JSON Data
+          </button>
+          <button class="action-btn primary-btn animate-glow" id="resetBtn">
+            <i class="fa-solid fa-rotate-left"></i> Create Another Card
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2026 CardCraft Pro. Powered by Node.js, Express & Premium Vanilla CSS.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
