@@ -5,6 +5,8 @@ A small web app that generates profile cards from user input.
 ## Features
 - Generate profile cards from name, role, and image input.
 
+- Customizable color themes for cards.
+
 ## Quick start
 1. Install dependencies:
 
