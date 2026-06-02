@@ -7,6 +7,8 @@ A small web app that generates profile cards from user input.
 
 - Customizable color themes for cards.
 
+- Download profile card as PNG.
+
 ## Quick start
 1. Install dependencies:
 
