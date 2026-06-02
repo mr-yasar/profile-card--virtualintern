@@ -13,6 +13,8 @@ A small web app that generates profile cards from user input.
 
 - Import from social profiles (e.g., LinkedIn).
 
+- Shareable public link for each card.
+
 ## Quick start
 1. Install dependencies:
 
