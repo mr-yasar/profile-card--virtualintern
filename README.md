@@ -19,6 +19,8 @@ A small web app that generates profile cards from user input.
 
 - Save templates locally for reuse.
 
+- Export/import JSON for batch generation.
+
 ## Quick start
 1. Install dependencies:
 
