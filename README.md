@@ -9,6 +9,8 @@ A small web app that generates profile cards from user input.
 
 - Download profile card as PNG.
 
+- Responsive layout for mobile and desktop.
+
 ## Quick start
 1. Install dependencies:
 
