@@ -11,6 +11,8 @@ A small web app that generates profile cards from user input.
 
 - Responsive layout for mobile and desktop.
 
+- Import from social profiles (e.g., LinkedIn).
+
 ## Quick start
 1. Install dependencies:
 
