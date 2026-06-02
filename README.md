@@ -15,6 +15,8 @@ A small web app that generates profile cards from user input.
 
 - Shareable public link for each card.
 
+- Keyboard accessible with ARIA support.
+
 ## Quick start
 1. Install dependencies:
 
